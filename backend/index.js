@@ -7,7 +7,13 @@ const notesRoutes = require('./routes/notes');
 const tenantsRoutes = require('./routes/tenants');
 
 const app = express();
-app.use(cors());
+
+// Enable CORS only for your deployed frontend
+app.use(cors({
+  origin: 'https://multi-tenant-notes-app-k15m-kj9f0ejq0-shabisthas-projects.vercel.app', 
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.use('/api', authRoutes);        // /api/login, /api/me
