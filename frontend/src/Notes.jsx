@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const API_BASE = 'multi-tenant-notes-app-k15m-kj9f0ejq0-shabisthas-projects.vercel.app';
+const API_BASE = 'https://multi-tenant-notes-app-k15m-git-main-shabisthas-projects.vercel.app/api';
 
 export default function Notes({ token, currentView }) {
   const [notes, setNotes] = useState([]);
