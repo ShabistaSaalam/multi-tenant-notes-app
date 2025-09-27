@@ -9,11 +9,14 @@ export default function Login({ setToken }) {
     e.preventDefault();
     setError('');
     try {
-      const res = await fetch('http://localhost:5000/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
+      const res = await fetch(
+        'https://multi-tenant-notes-app-k15m-kj9f0ejq0-shabisthas-projects.vercel.app/api/login', 
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password }),
+        }
+      );
       const data = await res.json();
       if (res.ok) {
         setToken(data.token);
