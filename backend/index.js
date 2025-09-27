@@ -1,4 +1,3 @@
-// index.js
 const express = require('express');
 const cors = require('cors');
 
@@ -8,10 +7,10 @@ const tenantsRoutes = require('./routes/tenants');
 
 const app = express();
 
-// Enable CORS only for your deployed frontend
+// Allow all origins
 app.use(cors({
-  origin: 'https://multi-tenant-notes-app-k15m-kj9f0ejq0-shabisthas-projects.vercel.app', 
-  credentials: true
+  origin: '*',        // <-- allows any frontend
+  credentials: true   // optional, can be false if you don't need cookies
 }));
 
 app.use(express.json());
