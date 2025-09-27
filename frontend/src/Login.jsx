@@ -10,8 +10,7 @@ export default function Login({ setToken }) {
     setError('');
     try {
       const res = await fetch(
-        'https://multi-tenant-notes-app-k15m-git-main-shabisthas-projects.vercel.app/api/login', 
-        {
+        'https://multi-tenant-notes-app-k15m.vercel.app/api/login',{
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password }),
